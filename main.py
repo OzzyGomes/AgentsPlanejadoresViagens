@@ -1,8 +1,10 @@
-import os
 from crewai import Crew
 from textwrap import dedent
 from agents import TravelAgents
 from tasks import TravelTasks
+
+from dotenv import load_dotenv
+load_dotenv()
 
 
 
