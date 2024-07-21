@@ -74,7 +74,7 @@ class TravelTasks:
             agent=agent,
         )
 
-    def identify_city(self, agent, origein, cities, interests, travel_date):
+    def identify_city(self, agent, origin, cities, interests, travel_date):
         return Task(
             description=dedent(
                 f"""
@@ -91,7 +91,7 @@ class TravelTasks:
                     - Origin: {origin}
                     - Cities: {cities}
                     - Interests: {interests}
-                    - Travel Date: {travel_dates}
+                    - Travel Date: {travel_date}
 
                     **Note**: {self.__tip_section()}
         """

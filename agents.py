@@ -39,6 +39,7 @@ class TravelAgents:
     def __init__(self):
         self.OpenAIGPT35 = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
         self.OpenAIGPT4 = ChatOpenAI(model_name="gpt-4", temperature=0.7)
+        self.OpenAIGPT4omini = ChatOpenAI(model_name="gpt-4o-mini", temperature=0.7)
         
 
     def expert_travel_agent(self):
@@ -50,7 +51,7 @@ class TravelAgents:
             tools=[SearchTools.search_internet,
                    CalculatorTools.calculate],
             verbose=True,
-            llm=self.OpenAIGPT4,
+            llm=self.OpenAIGPT4omini,
         )
 
     def city_selection_expert(self):
@@ -61,7 +62,7 @@ class TravelAgents:
             tools=[SearchTools.search_internet],
             allow_delegation=False,
             verbose=True,
-            llm=self.OpenAIGPT4,
+            llm=self.OpenAIGPT4omini,
         )
     
     def local_tour_guide(self):
@@ -73,5 +74,5 @@ class TravelAgents:
             tools=[SearchTools.search_internet],
             allow_delegation=False,
             verbose=True,
-            llm=self.OpenAIGPT4,
+            llm=self.OpenAIGPT4omini,
         )
